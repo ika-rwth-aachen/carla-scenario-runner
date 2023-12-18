@@ -19,12 +19,8 @@ jobs:
         with:
           repository: carla-compose/carla
           latest: true
-          fileName: "*.md"
+          fileName: "PythonAPI"
           out-file-path: artifacts
-
-      - name: debug
-        run: ls artifacts
-
 
       - uses: docker/build-push-action@v5
         name: Build and push
