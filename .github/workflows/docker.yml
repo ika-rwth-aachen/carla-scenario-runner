@@ -43,9 +43,13 @@ jobs:
       - name: debug1
         run: pwd
 
+      - name: debug1
+        run: ls
         
       - name: debug1
         run: ls artifacts
+      - name: debug1
+        run: ls scenario_runner
         
       - uses: docker/build-push-action@v5
         name: Build and push
