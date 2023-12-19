@@ -28,10 +28,10 @@ jobs:
           repository: carla-compose/carla
           latest: true
           fileName: PythonAPI.tar.gz
-          out-file-path: ../artifacts
+          out-file-path: artifacts
         
       - name: Extract PythonAPI
-        run: tar -xvzf ../artifacts/PythonAPI.tar.gz -C ../artifacts
+        run: tar -xvzf artifacts/PythonAPI.tar.gz -C artifacts
         
       - uses: docker/build-push-action@v5
         name: Build and push
@@ -40,4 +40,3 @@ jobs:
           file: docker/Dockerfile
           tags: cgellerac/carla-scenario-runner
           no-cache: true
-          context: ..
