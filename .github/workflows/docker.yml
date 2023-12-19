@@ -39,3 +39,4 @@ jobs:
           push: true
           file: docker/Dockerfile
           tags: cgellerac/carla-scenario-runner
+          no-cache: true
