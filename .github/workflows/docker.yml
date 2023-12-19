@@ -19,9 +19,12 @@ jobs:
         with:
           repository: carla-compose/carla
           latest: true
-          fileName: "PythonAPI"
+          fileName: PythonAPI.tar.gz
           out-file-path: artifacts
-
+          
+      - name: Extract PythonAPI
+        run: tar -xvzf artifacts/PythonAPI.tar.gz -C artifacts/PythonAPI
+        
       - uses: docker/build-push-action@v5
         name: Build and push
         with:
