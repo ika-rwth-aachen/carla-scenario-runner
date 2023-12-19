@@ -29,7 +29,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - uses: robinraju/release-downloader@v1.8
-        name: Download python-api
+        name: Download PythonAPI
         with:
           repository: carla-compose/carla
           latest: true
@@ -38,18 +38,6 @@ jobs:
         
       - name: Extract PythonAPI
         run: tar -xvzf artifacts/PythonAPI.tar.gz -C artifacts
-
-
-      - name: debug1
-        run: pwd
-
-      - name: debug1
-        run: ls
-        
-      - name: debug1
-        run: ls artifacts
-      - name: debug1
-        run: ls scenario_runner
         
       - uses: docker/build-push-action@v5
         name: Build and push
