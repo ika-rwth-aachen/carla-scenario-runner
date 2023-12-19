@@ -32,6 +32,14 @@ jobs:
         
       - name: Extract PythonAPI
         run: tar -xvzf artifacts/PythonAPI.tar.gz -C artifacts
+
+
+      - name: debug1
+        run: pwd
+
+        
+      - name: debug1
+        run: ls artifacts
         
       - uses: docker/build-push-action@v5
         name: Build and push
