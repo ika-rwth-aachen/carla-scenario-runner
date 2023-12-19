@@ -37,6 +37,7 @@ jobs:
         name: Build and push
         with:
           push: true
-          file: docker/Dockerfile
+          file: scenario_runner/docker/Dockerfile
           tags: cgellerac/carla-scenario-runner
           no-cache: true
+          context: ..
