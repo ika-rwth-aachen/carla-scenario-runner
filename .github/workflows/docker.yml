@@ -21,9 +21,16 @@ jobs:
           latest: true
           fileName: PythonAPI.tar.gz
           out-file-path: artifacts
-          
+
+      - name: debug
+        run: pwd
+
+        
+      - name: debug2
+        run: ls
+        
       - name: Extract PythonAPI
-        run: tar -xvzf artifacts/PythonAPI.tar.gz -C artifacts/PythonAPI
+        run: tar -xvzf scenario_runner/artifacts/PythonAPI.tar.gz -C artifacts/PythonAPI
         
       - uses: docker/build-push-action@v5
         name: Build and push
