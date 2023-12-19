@@ -27,11 +27,11 @@ RUN pip3 install --upgrade pip
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
 # Install scenario_runner
-COPY . $SCENARIO_RUNNER_PATH
+COPY ./scenario_runner $SCENARIO_RUNNER_PATH
 RUN pip3 install -r $SCENARIO_RUNNER_PATH/requirements.txt
 
 # Move over PythonAPI
-COPY artifacts/PythonAPI ${CARLA_API_PATH}
+COPY ./artifacts/PythonAPI ${CARLA_API_PATH}
 
 # Recursively install PythonAPI requirements, keep version of first occurrence
 RUN cat $(find ${CARLA_API_PATH} -type f -name "requirements.txt") > /tmp/requirements_raw.txt \
@@ -59,7 +59,7 @@ ENV WORKSPACE=${WORKSPACE}
 WORKDIR ${WORKSPACE}
 
 # Set entrypoint
-COPY ./docker/entrypoint.sh /
+COPY ./scenario_runner/docker/entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
 
 CMD [ "python3", "scenario_runner.py", "--help" ]
