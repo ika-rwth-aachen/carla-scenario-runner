@@ -8,7 +8,7 @@ USER root
 SHELL ["/bin/bash", "-c"]
 
 ARG CARLA_API_PATH=/opt/carla/PythonAPI
-ARG SCENARIO_RUNNER_PATH=/opt/carla/scenario_runner
+ARG SCENARIO_RUNNER_PATH=/opt/carla/scenario-runner
 
 # Install essentials
 RUN apt-get update && \
@@ -26,8 +26,8 @@ RUN apt-get update && \
 RUN pip3 install --upgrade pip
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
-# Install scenario_runner
-COPY ./scenario_runner $SCENARIO_RUNNER_PATH
+# Install scenario-runner
+COPY ./scenario-runner $SCENARIO_RUNNER_PATH
 RUN pip3 install -r $SCENARIO_RUNNER_PATH/requirements.txt
 
 # Move over PythonAPI
@@ -59,7 +59,7 @@ ENV WORKSPACE=${WORKSPACE}
 WORKDIR ${WORKSPACE}
 
 # Set entrypoint
-COPY ./scenario_runner/docker/entrypoint.sh /
+COPY ./scenario-runner/docker/entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
 
 CMD [ "python3", "scenario_runner.py", "--help" ]
