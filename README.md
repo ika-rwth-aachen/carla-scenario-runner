@@ -1,9 +1,23 @@
+# Control Module: *carla-scenario-runner*
+
+<p align="center"><img src="https://img.shields.io/github/v/release/carla-compose/carla-scenario-runner"/>
+  <img src="https://img.shields.io/github/license/carla-compose/carla-scenario-runner"/>
+  <a href="https://github.com/carla-compose/carla-scenario-runner/actions/workflows/docker.yml"><img src="https://github.com/carla-compose/carla-scenario-runner/actions/workflows/docker.yml/badge.svg"/></a>
+  <img src="https://img.shields.io/badge/CARLA-0.9.15-blueviolet"/>
+  <img src="https://img.shields.io/badge/Python-3.10-blueviolet"/>
+  <img src="https://img.shields.io/github/stars/carla-compose/carla-scenario-runner?style=social"/>
+</p>
+
+We recommend to use the *carla-scenario_runner* as **control module** within our proposed simulation framework <a href="https://github.com/carla-compose/carla-compose"><img src="https://img.shields.io/github/stars/carla-compose/carla-compose?style=social"/></a>.
+
+---
+---
+## Original README
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/carla-simulator/scenario_runner.svg)
 [![Build Status](https://travis-ci.com/carla-simulator/scenario_runner.svg?branch=master)](https://travis-ci.com/carla/scenario_runner)
 
-ScenarioRunner for CARLA
-========================
 This repository contains traffic scenario definition and an execution engine
 for CARLA. It also allows the execution of a simulation of the CARLA Challenge.
 You can use this system to prepare your agent for the CARLA Challenge.
