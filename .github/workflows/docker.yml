@@ -35,10 +35,11 @@ jobs:
           repository: carla-compose/carla-simulator
           latest: true
           fileName: PythonAPI.tar.gz
+          extract: true          
           out-file-path: artifacts
         
-      - name: Extract PythonAPI
-        run: tar -xvzf artifacts/PythonAPI.tar.gz -C artifacts
+      - name: Remove PythonAPI.tar.gz
+        run: rm artifacts/PythonAPI.tar.gz
         
       - uses: docker/build-push-action@v5
         name: Build and push
