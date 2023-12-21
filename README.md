@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/github/stars/carla-compose/carla-scenario-runner?style=social"/>
 </p>
 
-We recommend to use the *carla-scenario_runner* as **control module** within our proposed simulation framework <a href="https://github.com/carla-compose/carla-compose"><img src="https://img.shields.io/github/stars/carla-compose/carla-compose?style=social"/></a>.
+We recommend to use the *carla-scenario_runner* as **control module** within our proposed simulation framework <a href="https://github.com/carla-compose/carla-compose">carla-compose. <img src="https://img.shields.io/github/stars/carla-compose/carla-compose?style=social"/></a>
 
 ---
 ---
