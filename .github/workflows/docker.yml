@@ -40,6 +40,9 @@ jobs:
         
       - name: Remove PythonAPI.tar.gz
         run: rm artifacts/PythonAPI.tar.gz
+
+      - name: debug
+        run: tree
         
       - uses: docker/build-push-action@v5
         name: Build and push
