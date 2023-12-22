@@ -49,11 +49,3 @@ jobs:
           tags: cgellerac/carla-scenario-runner
           no-cache: true
           context: .
-
-      - uses: ncipollo/release-action@v1
-        name: Create Release
-        if: startsWith(github.ref, 'refs/tags')
-        with:
-          allowUpdates: true
-          tag: ${{ github.ref_name }}
-          commit: ${{ github.sha }}
