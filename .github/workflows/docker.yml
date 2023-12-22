@@ -36,7 +36,7 @@ jobs:
           latest: true
           fileName: PythonAPI.tar.gz
           extract: true          
-          out-file-path: artifacts
+          out-file-path: .
         
       - name: Remove PythonAPI.tar.gz
         run: rm artifacts/PythonAPI.tar.gz
