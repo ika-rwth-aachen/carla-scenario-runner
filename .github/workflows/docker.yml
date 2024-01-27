@@ -47,6 +47,6 @@ jobs:
         with:
           push: true
           file: carla-scenario-runner/docker/Dockerfile
-          tags: cgellerac/carla-scenario-runner
+          tags: rwthika/carla-scenario-runner
           no-cache: true
           context: .
