@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: clean-up
     env:
-      IMAGE_TAG: ${{ github.ref == 'refs/heads/main' && 'latest' || 'latest_${{ github.ref_name }}_ci' }}
+      IMAGE_TAG: ${{ github.ref == 'refs/heads/main' && 'latest' || 'latest_${ github.ref_name }_ci' }}
 
     steps:
 
@@ -47,7 +47,7 @@ jobs:
         
       #- name: Set image tag
       #  run: |
-      #    echo "IMAGE_TAG="latest_${{ github.ref_name }}_ci" >> $GITHUB_ENV
+      #    echo "IMAGE_TAG="latest_${ github.ref_name }_ci" >> $GITHUB_ENV
       #  if: github.ref.name != github.event.repository.default_branch
       
       - uses: docker/build-push-action@v5
