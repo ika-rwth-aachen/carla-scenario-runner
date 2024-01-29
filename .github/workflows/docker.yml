@@ -45,9 +45,9 @@ jobs:
       - name: Set image tag
         run: |
           if [ "${{ github.ref.name }}" != "${{ github.event.repository.default_branch }}" ]; then
-            export $IMAGE_TAG="latest_${{ github.ref.name }}_ci"
+            export IMAGE_TAG="latest_${{ github.ref.name }}_ci"
           else
-            export $IMAGE_TAG="latest"
+            export IMAGE_TAG="latest"
           fi
 
       - uses: docker/build-push-action@v5
@@ -55,6 +55,6 @@ jobs:
         with:
           push: true
           file: carla-scenario-runner/docker/Dockerfile
-          tags: rwthika/carla-scenario-runner:IMAGE_TAG
+          tags: rwthika/carla-scenario-runner:$IMAGE_TAG
           no-cache: true
           context: .
