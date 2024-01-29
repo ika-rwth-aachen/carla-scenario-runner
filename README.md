@@ -1,13 +1,13 @@
 # Control Actor: *carla-scenario-runner*
 
 <p align="left">
-  <img src="https://img.shields.io/github/v/release/carla-compose/carla-scenario-runner"/>
-  <img src="https://img.shields.io/github/license/carla-compose/carla-scenario-runner"/>
-  <a href="https://github.com/carla-compose/carla-scenario-runner/actions/workflows/docker.yml">
-  <img src="https://github.com/carla-compose/carla-scenario-runner/actions/workflows/docker.yml/badge.svg"/></a>
+  <img src="https://img.shields.io/github/v/release/ika-rwth-aachen/carla-scenario-runner"/>
+  <img src="https://img.shields.io/github/license/ika-rwth-aachen/carla-scenario-runner"/>
+  <a href="https://github.com/ika-rwth-aachen/carla-scenario-runner/actions/workflows/docker.yml">
+  <img src="https://github.com/ika-rwth-aachen/carla-scenario-runner/actions/workflows/docker.yml/badge.svg"/></a>
   <img src="https://img.shields.io/badge/CARLA-0.9.15-blueviolet"/>
   <img src="https://img.shields.io/badge/Python-3.10-blueviolet"/>
-  <img src="https://img.shields.io/github/stars/carla-compose/carla-scenario-runner?style=social"/>
+  <img src="https://img.shields.io/github/stars/ika-rwth-aachen/carla-scenario-runner?style=social"/>
 </p>
 
 > [!IMPORTANT]
@@ -15,6 +15,7 @@
 
 > [!TIP]
 > We recommend to use the *carla-scenario-runner* as **control actor** in our open, modular and scalable simulation framework <a href="https://github.com/ika-rwth-aachen/carlos">**CARLOS**. <img src="https://img.shields.io/github/stars/ika-rwth-aachen/carlos?style=social"/></a> 
+>
 > The *carla-scenario-runner* is used to enable scenario-based testing and evaluation. It is a powerful engine that follows the OpenSCENARIO standard for scenario definitions.
 
 > [!NOTE]
