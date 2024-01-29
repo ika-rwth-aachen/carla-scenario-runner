@@ -16,7 +16,8 @@ jobs:
     name: Create docker image
     runs-on: ubuntu-latest
     needs: clean-up
-
+    env: 
+      IMAGE_TAG_SUFFIX: ""
     steps:
 
       - uses: actions/checkout@v4
@@ -45,7 +46,7 @@ jobs:
         
       - name: Set image tag
         run: |
-          echo "IMAGE_TAG=latest_${{ github.ref_name }}_ci" >> $GITHUB_ENV
+          echo "IMAGE_TAG_SUFFIX=_${{ github.ref_name }}_ci" >> $GITHUB_ENV
         if: github.ref.name != github.event.repository.default_branch
       
       - uses: docker/build-push-action@v5
@@ -53,6 +54,6 @@ jobs:
         with:
           push: true
           file: carla-scenario-runner/docker/Dockerfile
-          tags: rwthika/carla-scenario-runner:${{env.IMAGE_TAG}}
+          tags: rwthika/carla-scenario-runner:latest${{env.IMAGE_TAG_SUFFIX}}
           no-cache: true
           context: .
