@@ -45,7 +45,7 @@ jobs:
         
       - name: Set image tag
         run: |
-          echo "IMAGE_TAG=latest_${ github.ref_name }_ci" >> $GITHUB_ENV
+          echo "IMAGE_TAG=latest_${{ github.ref_name }}_ci" >> $GITHUB_ENV
           echo $GITHUB_ENV
         if: github.ref.name != github.event.repository.default_branch
       
