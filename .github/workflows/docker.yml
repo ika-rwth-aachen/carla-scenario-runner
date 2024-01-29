@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: clean-up
     env:
-      IMAGE_TAG: latest
+      IMAGE_TAG: ${{ github.ref == 'refs/heads/main' && 'latest' || 'latest_${{ github.ref_name }}_ci }}
 
     steps:
 
@@ -45,10 +45,10 @@ jobs:
       - name: Remove PythonAPI.tar.gz
         run: rm PythonAPI.tar.gz
         
-      - name: Set image tag
-        run: |
-          echo "IMAGE_TAG="latest_${{ github.ref_name }}_ci" >> $GITHUB_ENV
-        if: github.ref.name != github.event.repository.default_branch
+      #- name: Set image tag
+      #  run: |
+      #    echo "IMAGE_TAG="latest_${{ github.ref_name }}_ci" >> $GITHUB_ENV
+      #  if: github.ref.name != github.event.repository.default_branch
       
       - uses: docker/build-push-action@v5
         name: Build and push
