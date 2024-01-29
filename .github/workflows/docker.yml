@@ -55,6 +55,6 @@ jobs:
         with:
           push: true
           file: carla-scenario-runner/docker/Dockerfile
-          tags: rwthika/carla-scenario-runner:$IMAGE_TAG
+          tags: rwthika/carla-scenario-runner:${IMAGE_TAG}
           no-cache: true
           context: .
