@@ -11,7 +11,7 @@
 </p>
 
 > [!IMPORTANT]
-> This repository is a minimal fork of the official [scenario_runner](https://github.com/carla-simulator/scenario_runner)! All modifications to the original repository are documented in [FEATURES.md](./FEATURES.md).
+> This repository is a minimal fork of the official [scenario_runner](https://github.com/carla-simulator/scenario_runner)! All initial and following modifications to the original repository are documented in [CARLOS_CHANGELOG.md](./CARLOS_CHANGELOG.md).
 
 > [!TIP]
 > We recommend to use the *carla-scenario-runner* as **control actor** in our open, modular and scalable simulation framework <a href="https://github.com/ika-rwth-aachen/carlos">**CARLOS**. <img src="https://img.shields.io/github/stars/ika-rwth-aachen/carlos?style=social"/></a> 
@@ -19,7 +19,7 @@
 > The *carla-scenario-runner* is used to enable scenario-based testing and evaluation. It is a powerful engine that follows the OpenSCENARIO standard for scenario definitions.
 
 > [!NOTE]
-> We set up a Continous Integration (CI) pipeline as [GitHub action](./github/workflows/docker.yml) to continously build Docker images for the `carla-scenario-runner`, publicly available on [Docker Hub](https://hub.docker.com/r/rwthika/carla-scenario-runner).
+> We set up a Continous Integration (CI) pipeline as [GitHub workflow](./github/workflows/docker.yml) to continously build Docker images for the `carla-scenario-runner`, publicly available on [Docker Hub](https://hub.docker.com/r/rwthika/carla-scenario-runner).
 
 ---
 ---

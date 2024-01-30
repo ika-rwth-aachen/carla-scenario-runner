@@ -2,7 +2,7 @@ ARG UBUNTU_VERSION="22.04"
 
 
 ############ dependencies ############
-FROM "ubuntu:${UBUNTU_VERSION}" as dependencies
+FROM "ubuntu:${UBUNTU_VERSION}"
 
 USER root
 SHELL ["/bin/bash", "-c"]
@@ -44,9 +44,6 @@ RUN echo "export PYTHONPATH=\$PYTHONPATH:$CARLA_API_PATH/carla/dist/$(ls $CARLA_
     echo "export PYTHONPATH=\$PYTHONPATH:$CARLA_API_PATH/carla" >> /setup_carla_env.sh; \
     echo "export CARLA_API_PATH=$CARLA_API_PATH" >> /setup_carla_env.sh; \
     echo "source /setup_carla_env.sh" >> ~/.bashrc
-
-############ final ############
-FROM dependencies as final
 
 # Needed for (pygame based) scripts that have a GUI
 ENV SDL_VIDEODRIVER=x11
