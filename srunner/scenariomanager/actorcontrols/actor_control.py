@@ -79,6 +79,7 @@ class ActorControl(object):
             if ".py" in control_py_module:
                 module_name = os.path.basename(control_py_module).split('.')[0]
                 sys.path.append(os.path.dirname(control_py_module))
+                sys.path.append(os.path.dirname(__file__))
                 module_control = importlib.import_module(module_name)
                 control_class_name = module_control.__name__.title().replace('_', '')
             else:

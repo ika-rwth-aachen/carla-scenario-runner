@@ -18,7 +18,7 @@ Limitations:
 from srunner.scenariomanager.actorcontrols.basic_control import BasicControl
 
 
-class CarlaAutoPilotControl(BasicControl):
+class CarlaAutopilot(BasicControl):
 
     """
     Controller class for vehicles derived from BasicControl.
@@ -33,7 +33,7 @@ class CarlaAutoPilotControl(BasicControl):
     """
 
     def __init__(self, actor, args=None):
-        super(CarlaAutoPilotControl, self).__init__(actor)
+        super(CarlaAutopilot, self).__init__(actor)
         self._actor.set_autopilot(enabled=True)
 
     def reset(self):
