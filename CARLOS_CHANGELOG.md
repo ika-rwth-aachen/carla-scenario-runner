@@ -9,3 +9,5 @@
 *   Update to Ubuntu 22.04 and Python 3.10 including corresponding pip versions
 
 ### Minor changes
+
+*   Small fix related to CARLA autopilot
