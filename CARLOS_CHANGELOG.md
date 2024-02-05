@@ -11,3 +11,4 @@
 ### Minor changes
 
 *   Small fix related to CARLA autopilot
+*   Modified `scenario_runner.py` to return the result of scenario execution as exit code
