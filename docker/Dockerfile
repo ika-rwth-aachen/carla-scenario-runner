@@ -23,7 +23,6 @@ RUN apt-get update && \
       python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --upgrade pip --break-system-packages
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 12
 
 # Install carla-scenario-runner
