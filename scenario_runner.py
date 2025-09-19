@@ -59,7 +59,7 @@ from srunner.scenarios.osc2_scenario import OSC2Scenario
 from srunner.scenarioconfigs.osc2_scenario_configuration import OSC2ScenarioConfiguration
 
 # Minimum version of CARLA that is required
-MIN_CARLA_VERSION = '0.9.14'
+MIN_CARLA_VERSION = '0.9.16'
 
 
 class ScenarioRunner(object):
@@ -288,10 +288,12 @@ class ScenarioRunner(object):
 
         if not self.manager.analyze_scenario(self._args.output, filename, junit_filename, json_filename):
             print("All scenario tests were passed successfully!")
+            return True
         else:
             print("Not all scenario tests were successful")
             if not (self._args.output or filename or junit_filename):
                 print("Please run with --output for further information")
+            return False
 
     def _record_criteria(self, criteria, name):
         """
@@ -445,15 +447,13 @@ class ScenarioRunner(object):
             self.manager.run_scenario()
 
             # Provide outputs if required
-            self._analyze_scenario(config)
+            result = self._analyze_scenario(config)
 
             # Remove all actors, stop the recorder and save all criterias (if needed)
             scenario.remove_all_actors()
             if self._args.record:
                 self.client.stop_recorder()
                 self._record_criteria(self.manager.scenario.get_criteria(), recorder_name)
-
-            result = True
 
         except Exception as e:              # pylint: disable=broad-except
             traceback.print_exc()

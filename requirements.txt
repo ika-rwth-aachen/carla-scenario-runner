@@ -1,4 +1,4 @@
-py-trees==0.8.3
+py-trees==0.8.3 # newest version (2.2.3) is not compatible
 numpy==1.24.4; python_version >= '3.0'
 networkx==3.4.2
 Shapely==2.1.1
