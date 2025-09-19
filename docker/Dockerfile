@@ -23,12 +23,12 @@ RUN apt-get update && \
       python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip --break-system-packages
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 12
 
 # Install carla-scenario-runner
 COPY ./carla-scenario-runner $SCENARIO_RUNNER_PATH
-RUN pip3 install -r $SCENARIO_RUNNER_PATH/requirements.txt
+RUN pip3 install -r $SCENARIO_RUNNER_PATH/requirements.txt --break-system-packages
 
 # Move over PythonAPI
 COPY ./artifacts/PythonAPI ${CARLA_API_PATH}
@@ -36,13 +36,13 @@ COPY ./artifacts/PythonAPI ${CARLA_API_PATH}
 # Recursively install PythonAPI requirements, keep version of first occurrence
 RUN cat $(find ${CARLA_API_PATH} -type f -name "requirements.txt") > /tmp/requirements_raw.txt \
     && awk -F '==' '{print $1}' /tmp/requirements_raw.txt | awk '!visited[$1]++' > /tmp/requirements.txt \
-    && pip3 install -r /tmp/requirements.txt
+    && pip3 install -r /tmp/requirements.txt --break-system-packages
 
 # Install CARLA PythonAPI wheel
 RUN set -e; \
     pyver=$(python3 -c "import sys; print(f'{sys.version_info.major}{sys.version_info.minor}')"); \
     wheel=$(echo ${CARLA_API_PATH}/carla/dist/*${pyver}*.whl); \
-    pip install --no-cache-dir "$wheel"
+    pip install --no-cache-dir "$wheel" --break-system-packages
 
 # Create script that adds API to pythonpath and make .bashrc source it
 RUN echo "export PYTHONPATH=\$PYTHONPATH:$CARLA_API_PATH/carla/agents" >> /setup_carla_env.sh; \
