@@ -14,7 +14,7 @@ ARG SCENARIO_RUNNER_PATH=/opt/carla/carla-scenario-runner
 RUN apt-get update && \
     apt-get install -y \
       libpng16-16 \
-      libtiff5 \
+      libtiff6 \
       libjpeg8 \
       build-essential \
       wget \
