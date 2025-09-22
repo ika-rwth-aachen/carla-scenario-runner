@@ -36,7 +36,7 @@ jobs:
         name: Download PythonAPI
         with:
           repository: ika-rwth-aachen/carla-simulator
-          latest: true
+          tag: v0.9.15
           fileName: PythonAPI.tar.gz
           extract: true          
           out-file-path: .
