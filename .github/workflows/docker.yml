@@ -4,13 +4,12 @@ on: [push, pull_request]
 
 jobs:
   
-  clean-up:
-    name: Clean up
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Clean up
-        run: rm -rf *
+  #clean-up:
+  #  name: Clean up
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - name: Clean up
+  #      run: rm -rf *
         
   create-image:
     name: Create docker image
