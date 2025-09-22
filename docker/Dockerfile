@@ -27,7 +27,7 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 12
 
 # Install carla-scenario-runner
 COPY ./carla-scenario-runner $SCENARIO_RUNNER_PATH
-RUN pip3 install -r $SCENARIO_RUNNER_PATH/requirements.txt --break-system-packages
+RUN pip install -r $SCENARIO_RUNNER_PATH/requirements.txt --break-system-packages
 
 # Move over PythonAPI
 COPY ./artifacts/PythonAPI ${CARLA_API_PATH}
