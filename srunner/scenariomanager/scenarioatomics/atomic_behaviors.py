@@ -770,7 +770,7 @@ class ChangeActorWaypoints(AtomicBehavior):
         self._times = times
         self._is_osc1 = is_osc1
 
-        if len(self._waypoints) != len(self._times):
+        if times is not None and len(waypoints) != len(times):
             raise ValueError("Both 'waypoints' and 'times' must have the same length")
 
     def initialise(self):
